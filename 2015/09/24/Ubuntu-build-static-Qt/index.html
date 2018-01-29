@@ -5,14 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>Ubuntu Building static Qt | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform:Ubuntu Configure environment123sudo apt-get install build-essentialsudo apt-get install  libglib2.0-dev libSM-dev libxrender-dev libfontconfig">
+<meta name="keywords" content="Qt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu Building static Qt">
+<meta property="og:url" content="http://yoursite.com/2015/09/24/Ubuntu-build-static-Qt/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform:Ubuntu Configure environment123sudo apt-get install build-essentialsudo apt-get install  libglib2.0-dev libSM-dev libxrender-dev libfontconfig">
+<meta property="og:updated_time" content="2015-09-24T08:55:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Ubuntu Building static Qt">
+<meta name="twitter:description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform:Ubuntu Configure environment123sudo apt-get install build-essentialsudo apt-get install  libglib2.0-dev libSM-dev libxrender-dev libfontconfig">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,54 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-VisualStutio-Building-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/24/VisualStutio-Building-static-Qt/" class="article-date">
-  <time datetime="2015-09-24T08:57:28.000Z" itemprop="datePublished">2015-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/VisualStutio-Building-static-Qt/">VisualStutio Building static Qt</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>source: qt-everywhere-opensource-src-4.7.3.tar.gz<br>platform: Visual Studio 2008 &amp; Win7</p>
-<h3 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h3><p>Decompress Qt source.</p>
-<p>edit configurations in mkspecs which match your environment(this case: win32-msvc2008):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QMAKE_LFLAGS_RELEASE = /INCREMENTAL:NO /LTCG /NODEFAULTLIB:libc.lib /NODEFAULTLIB:msvcrt.lib/NODEFAULTLIB:libcd.lib /NODEFAULTLIB:libcmtd.lib /NODEFAULTLIB:msvcrtd.lib</span><br><span class="line">QMAKE_LFLAGS_DEBUG = /DEBUG /NODEFAULTLIB:libc.lib /NODEFAULTLIB:libcmt.lib /NODEFAULTLIB:msvcrt.lib /NODEFAULTLIB:libcd.lib /NODEFAULTLIB:msvcrtd.lib</span><br></pre></td></tr></table></figure>
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>open VS Command prompt(or running vcvars32.bat in command)<br>go to your Qt path, run:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">configure -static -debug-and-release -no-webkit -nomake demos -nomake examples -qt-sql-mysql</span><br><span class="line">nmake</span><br></pre></td></tr></table></figure>
-<h3 id="Refrences"><a href="#Refrences" class="headerlink" title="Refrences"></a>Refrences</h3><p><a href="http://www.qtcn.org/bbs/read.php?tid=7844" target="_blank" rel="noopener">Building Qt 4.2.3 for windows(chinese)</a><br><a href="http://sfeqggh.blog.163.com/blog/static/1021434252013122431253/" target="_blank" rel="noopener">My blog(chinese)</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/VisualStutio-Building-static-Qt/" data-id="cjczottwa0001yu22r6nffi69" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Ubuntu-build-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Ubuntu-build-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/09/24/Ubuntu-build-static-Qt/" class="article-date">
   <time datetime="2015-09-24T08:36:26.000Z" itemprop="datePublished">2015-09-24</time>
@@ -119,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/Ubuntu-build-static-Qt/">Ubuntu Building static Qt</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu Building static Qt
     </h1>
   
 
@@ -147,50 +105,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Hello-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/24/Hello-Hexo/" class="article-date">
-  <time datetime="2015-09-24T02:01:26.000Z" itemprop="datePublished">2015-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2015/09/24/VisualStutio-Building-static-Qt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
         
+          VisualStutio Building static Qt
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/Hello-Hexo/">Hello Hexo</a>
-    </h1>
   
+    <a href="/2015/09/24/Hello-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Hello Hexo</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to my blog!</p>
-<p>This is my first teconology blog. Hoping to work &amp; study in github with you!</p>
-<p>Later I’ll move some older blogs here, most of them are about Qt.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Hello-Hexo/" data-id="cjczottw70000yu226m8dzk3h" class="article-share-link">Compartir</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         

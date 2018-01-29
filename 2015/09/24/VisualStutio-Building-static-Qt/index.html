@@ -5,14 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>VisualStutio Building static Qt | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform: Visual Studio 2008 &amp;amp; Win7 ConfigureDecompress Qt source. edit configurations in mkspecs which match your environment(this case: win32-msv">
+<meta name="keywords" content="Qt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VisualStutio Building static Qt">
+<meta property="og:url" content="http://yoursite.com/2015/09/24/VisualStutio-Building-static-Qt/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform: Visual Studio 2008 &amp;amp; Win7 ConfigureDecompress Qt source. edit configurations in mkspecs which match your environment(this case: win32-msv">
+<meta property="og:updated_time" content="2015-09-24T09:06:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="VisualStutio Building static Qt">
+<meta name="twitter:description" content="source: qt-everywhere-opensource-src-4.7.3.tar.gzplatform: Visual Studio 2008 &amp;amp; Win7 ConfigureDecompress Qt source. edit configurations in mkspecs which match your environment(this case: win32-msv">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-VisualStutio-Building-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-VisualStutio-Building-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/09/24/VisualStutio-Building-static-Qt/" class="article-date">
   <time datetime="2015-09-24T08:57:28.000Z" itemprop="datePublished">2015-09-24</time>
@@ -74,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/VisualStutio-Building-static-Qt/">VisualStutio Building static Qt</a>
+    <h1 class="article-title" itemprop="name">
+      VisualStutio Building static Qt
     </h1>
   
 
@@ -102,95 +105,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Ubuntu-build-static-Qt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/24/Ubuntu-build-static-Qt/" class="article-date">
-  <time datetime="2015-09-24T08:36:26.000Z" itemprop="datePublished">2015-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/Ubuntu-build-static-Qt/">Ubuntu Building static Qt</a>
-    </h1>
+    <a href="/2015/09/24/Ubuntu-build-static-Qt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Ubuntu Building static Qt</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>source: qt-everywhere-opensource-src-4.7.3.tar.gz<br>platform:Ubuntu</p>
-<h3 id="Configure-environment"><a href="#Configure-environment" class="headerlink" title="Configure environment"></a>Configure environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br><span class="line">sudo apt-get install  libglib2.0-dev libSM-dev libxrender-dev libfontconfig1-dev libxext-dev libglu1-mesa-dev libgtk2.0-dev</span><br><span class="line">sudo apt-get install xorg-dev</span><br></pre></td></tr></table></figure>
-<h3 id="Build-amp-Install"><a href="#Build-amp-Install" class="headerlink" title="Build &amp; Install"></a>Build &amp; Install</h3><p>Decompress qt sources, run configure:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure -static -debug-and-release -no-webkit -nomake demos -nomake examples -qt-sql-mysql</span><br><span class="line">make sub-src</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>edit /etc/profile, adding:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> QTDIR=/opt/qtsdk-xxxx/qt</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:<span class="variable">$QTDIR</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$QTDIR</span>/bin</span><br></pre></td></tr></table></figure>
-<h3 id="Refrences"><a href="#Refrences" class="headerlink" title="Refrences"></a>Refrences</h3><p><a href="http://www.qtcn.org/bbs/read-htm-tid-34238.html" target="_blank" rel="noopener">My post(chinese)</a><br><a href="http://www.qtcn.org/bbs/read-htm-tid-1075.html" target="_blank" rel="noopener">Qt Downloads(chinese)</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Ubuntu-build-static-Qt/" data-id="cjczottwc0002yu22utl52c38" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Hello-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/24/Hello-Hexo/" class="article-date">
-  <time datetime="2015-09-24T02:01:26.000Z" itemprop="datePublished">2015-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/Hello-Hexo/">Hello Hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to my blog!</p>
-<p>This is my first teconology blog. Hoping to work &amp; study in github with you!</p>
-<p>Later I’ll move some older blogs here, most of them are about Qt.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Hello-Hexo/" data-id="cjczottw70000yu226m8dzk3h" class="article-share-link">Compartir</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
