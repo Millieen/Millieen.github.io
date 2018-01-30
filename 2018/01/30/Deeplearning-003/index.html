@@ -5,19 +5,19 @@
   
 
   
-  <title>深度学习实践-001 | 藤原敲键盘</title>
+  <title>深度学习实践-003 | 藤原敲键盘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 https://www.coursera.org/specializations/deep-learning 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等">
+  <meta name="description" content="Library工程更新到 https://github.com/Millieen/TestNeuronNetwork  · 实现了前向传播的计算（单线程）  多核计算优化思路：  每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。 通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，">
 <meta name="keywords" content="DeepLearning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习实践-001">
-<meta property="og:url" content="http://yoursite.com/2018/01/30/Deeplearning-001/index.html">
+<meta property="og:title" content="深度学习实践-003">
+<meta property="og:url" content="http://yoursite.com/2018/01/30/Deeplearning-003/index.html">
 <meta property="og:site_name" content="藤原敲键盘">
-<meta property="og:description" content="之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 https://www.coursera.org/specializations/deep-learning 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等">
-<meta property="og:updated_time" content="2018-01-29T08:43:51.834Z">
+<meta property="og:description" content="Library工程更新到 https://github.com/Millieen/TestNeuronNetwork  · 实现了前向传播的计算（单线程）  多核计算优化思路：  每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。 通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，">
+<meta property="og:updated_time" content="2018-01-30T09:43:52.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习实践-001">
-<meta name="twitter:description" content="之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 https://www.coursera.org/specializations/deep-learning 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等">
+<meta name="twitter:title" content="深度学习实践-003">
+<meta name="twitter:description" content="Library工程更新到 https://github.com/Millieen/TestNeuronNetwork  · 实现了前向传播的计算（单线程）  多核计算优化思路：  每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。 通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，">
   
     <link rel="alternate" href="/atom.xml" title="藤原敲键盘" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Deeplearning-001" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Deeplearning-003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/30/Deeplearning-001/" class="article-date">
-  <time datetime="2018-01-30T04:03:26.000Z" itemprop="datePublished">2018-01-30</time>
+    <a href="/2018/01/30/Deeplearning-003/" class="article-date">
+  <time datetime="2018-01-30T07:25:09.000Z" itemprop="datePublished">2018-01-30</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深度学习实践-001
+      深度学习实践-003
     </h1>
   
 
@@ -90,17 +90,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">https://www.coursera.org/specializations/deep-learning</a> 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等。。。）</p>
-<p>XCode的Library工程提交到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> 上了。目前还是个空工程，之后慢慢更新～</p>
-<p>这个Lib的目标是：<br>· 能够建立一个任意层、每层神经元个数任意的前馈神经网络。<br>· 激活函数包括ReLU和Sigmoid<br>· 使用多线程完成矩阵乘法运算。使用的线程个数可配置并能够查看相应的性能变化。<br>· 矩阵乘法可通过配置，扩展成CUDA加速的方式。</p>
-<p>最基本的库完成后，会用Qt做一个配套的界面工程，来实现以上参数的可视化配置。</p>
-<hr>
-<p>XCode下写Library挺坑的。工程配置好了，编译出了动态库，但是测试程序那边却无法正常连接更新后的dylib库，重新编译加函数之后，测试那边就总是报link error，看上去就是没有更新dylib的锅。<br>检查了一下报错信息，果然在 /Users/Millieen/Library/Developer/Xcode/DerivedData/testSNN-gsnjuxvmaggedqahtvdcmrpeqiej/Build/Products/Debug/下找到了之前没有更新的库，删除之，重新编译后成功了。暂时还没有搞清楚怎么自动替换这个库，以后更新库的时候先手动替换吧。</p>
+        <p>Library工程更新到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> </p>
+<p>· 实现了前向传播的计算（单线程）</p>
+<ul>
+<li><p>多核计算优化思路：</p>
+<ul>
+<li>每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。</li>
+<li>通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，就使用已有的空闲对象进行计算。使用一个队列来存放空闲的对象。</li>
+<li>线程池的上限可以通过配置文件改变，默认情况下为CPU线程数量。</li>
+</ul>
+<ul>
+<li>另一个优化思路：定义矩阵操作，在矩阵操作内部使用算法和多线程优化。而不是使用很多对象进行计算。这样更符合认知。</li>
+</ul>
+</li>
+</ul>
+<p>· 实现了反向传播Sigmoid函数求导，以及计算dW，db的部分函数。（尚未完成）</p>
+<ul>
+<li>实现中一度迷惑于dW的维数莫名其妙多出来一个，后来才发现需要计算所有的dZi取平均后的值。</li>
+<li>截止到第一课第二周，还没有到多层的部分，所以反向传播暂时无法输出当前层的dA给上一层继续进行反向传播。</li>
+<li>需要通过矩阵操作进一步简化。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/Deeplearning-001/" data-id="cjczp6noy0000o6223k6t0wbw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/30/Deeplearning-003/" data-id="cjd1gmmjl0000wt22q2a78nro" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
@@ -111,19 +125,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/01/30/Deeplearning-003/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          深度学习实践-003
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/29/Deeplearning-002/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/30/Deeplearning-001/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">深度学习实践-002</div>
+      <div class="article-nav-title">深度学习实践-001</div>
     </a>
   
 </nav>

@@ -68,10 +68,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Deeplearning-002" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Deeplearning-003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/30/Deeplearning-002/" class="article-date">
-  <time datetime="2018-01-30T09:38:26.000Z" itemprop="datePublished">2018-01-30</time>
+    <a href="/2018/01/30/Deeplearning-003/" class="article-date">
+  <time datetime="2018-01-30T07:25:09.000Z" itemprop="datePublished">2018-01-30</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/30/Deeplearning-002/">深度学习实践-002</a>
+      <a class="article-title" href="/2018/01/30/Deeplearning-003/">深度学习实践-003</a>
     </h1>
   
 
@@ -91,12 +91,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Library工程更新到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> </p>
-<p>· 实现了Sigmoid激活函数（向量形式）（单线程计算）<br>· 实现了二分类的Lost Function（向量形式）（单线程计算）</p>
+<p>· 实现了前向传播的计算（单线程）</p>
+<ul>
+<li><p>多核计算优化思路：</p>
+<ul>
+<li>每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。</li>
+<li>通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，就使用已有的空闲对象进行计算。使用一个队列来存放空闲的对象。</li>
+<li>线程池的上限可以通过配置文件改变，默认情况下为CPU线程数量。</li>
+</ul>
+<ul>
+<li>另一个优化思路：定义矩阵操作，在矩阵操作内部使用算法和多线程优化。而不是使用很多对象进行计算。这样更符合认知。</li>
+</ul>
+</li>
+</ul>
+<p>· 实现了反向传播Sigmoid函数求导，以及计算dW，db的部分函数。（尚未完成）</p>
+<ul>
+<li>实现中一度迷惑于dW的维数莫名其妙多出来一个，后来才发现需要计算所有的dZi取平均后的值。</li>
+<li>截止到第一课第二周，还没有到多层的部分，所以反向传播暂时无法输出当前层的dA给上一层继续进行反向传播。</li>
+<li>需要通过矩阵操作进一步简化。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/Deeplearning-002/" data-id="cjd015bou00001022y7t4ggye" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/30/Deeplearning-003/" data-id="cjd1gmmjl0000wt22q2a78nro" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
@@ -141,6 +159,46 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2018/01/30/Deeplearning-001/" data-id="cjczp6noy0000o6223k6t0wbw" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Deeplearning-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/Deeplearning-002/" class="article-date">
+  <time datetime="2018-01-29T09:38:26.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/29/Deeplearning-002/">深度学习实践-002</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Library工程更新到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> </p>
+<p>· 实现了Sigmoid激活函数（向量形式）（单线程计算）<br>· 实现了二分类的Lost Function（向量形式）（单线程计算）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/29/Deeplearning-002/" data-id="cjd015bou00001022y7t4ggye" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
@@ -304,7 +362,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DeepLearning/" style="font-size: 10px;">DeepLearning</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a>
+      <a href="/tags/DeepLearning/" style="font-size: 20px;">DeepLearning</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a>
     </div>
   </div>
 
@@ -326,11 +384,15 @@
       <ul>
         
           <li>
-            <a href="/2018/01/30/Deeplearning-002/">深度学习实践-002</a>
+            <a href="/2018/01/30/Deeplearning-003/">深度学习实践-003</a>
           </li>
         
           <li>
             <a href="/2018/01/30/Deeplearning-001/">深度学习实践-001</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/Deeplearning-002/">深度学习实践-002</a>
           </li>
         
           <li>
@@ -339,10 +401,6 @@
         
           <li>
             <a href="/2015/09/24/Ubuntu-build-static-Qt/">Ubuntu Building static Qt</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/24/Hello-Hexo/">Hello Hexo</a>
           </li>
         
       </ul>
