@@ -126,50 +126,6 @@
 
 
   
-    <article id="post-Deeplearning-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/30/Deeplearning-001/" class="article-date">
-  <time datetime="2018-01-30T04:03:26.000Z" itemprop="datePublished">2018-01-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/30/Deeplearning-001/">深度学习实践-001</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">https://www.coursera.org/specializations/deep-learning</a> 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等。。。）</p>
-<p>XCode的Library工程提交到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> 上了。目前还是个空工程，之后慢慢更新～</p>
-<p>这个Lib的目标是：<br>· 能够建立一个任意层、每层神经元个数任意的前馈神经网络。<br>· 激活函数包括ReLU和Sigmoid<br>· 使用多线程完成矩阵乘法运算。使用的线程个数可配置并能够查看相应的性能变化。<br>· 矩阵乘法可通过配置，扩展成CUDA加速的方式。</p>
-<p>最基本的库完成后，会用Qt做一个配套的界面工程，来实现以上参数的可视化配置。</p>
-<hr>
-<p>XCode下写Library挺坑的。工程配置好了，编译出了动态库，但是测试程序那边却无法正常连接更新后的dylib库，重新编译加函数之后，测试那边就总是报link error，看上去就是没有更新dylib的锅。<br>检查了一下报错信息，果然在 /Users/Millieen/Library/Developer/Xcode/DerivedData/testSNN-gsnjuxvmaggedqahtvdcmrpeqiej/Build/Products/Debug/下找到了之前没有更新的库，删除之，重新编译后成功了。暂时还没有搞清楚怎么自动替换这个库，以后更新库的时候先手动替换吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/Deeplearning-001/" data-id="cjczp6noy0000o6223k6t0wbw" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Deeplearning-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/29/Deeplearning-002/" class="article-date">
@@ -199,6 +155,50 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2018/01/29/Deeplearning-002/" data-id="cjd015bou00001022y7t4ggye" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Deeplearning-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/Deeplearning-001/" class="article-date">
+  <time datetime="2018-01-29T04:03:26.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/29/Deeplearning-001/">深度学习实践-001</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前在Coursera上看了Andrew（吴恩达）的DeepLearning相关课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">https://www.coursera.org/specializations/deep-learning</a> 。用了接近两个月的时间看完视频做了作业，但是感觉理解的还是相当肤浅，于是决定使用C++来尝试着实现一个神经网络。一方面加深理解，另一方面也扩充一下自己很多方面的开发能力（Git，XCode，多线程，Qt等。。。）</p>
+<p>XCode的Library工程提交到 <a href="https://github.com/Millieen/TestNeuronNetwork" target="_blank" rel="noopener">https://github.com/Millieen/TestNeuronNetwork</a> 上了。目前还是个空工程，之后慢慢更新～</p>
+<p>这个Lib的目标是：<br>· 能够建立一个任意层、每层神经元个数任意的前馈神经网络。<br>· 激活函数包括ReLU和Sigmoid<br>· 使用多线程完成矩阵乘法运算。使用的线程个数可配置并能够查看相应的性能变化。<br>· 矩阵乘法可通过配置，扩展成CUDA加速的方式。</p>
+<p>最基本的库完成后，会用Qt做一个配套的界面工程，来实现以上参数的可视化配置。</p>
+<hr>
+<p>XCode下写Library挺坑的。工程配置好了，编译出了动态库，但是测试程序那边却无法正常连接更新后的dylib库，重新编译加函数之后，测试那边就总是报link error，看上去就是没有更新dylib的锅。<br>检查了一下报错信息，果然在 /Users/Millieen/Library/Developer/Xcode/DerivedData/testSNN-gsnjuxvmaggedqahtvdcmrpeqiej/Build/Products/Debug/下找到了之前没有更新的库，删除之，重新编译后成功了。暂时还没有搞清楚怎么自动替换这个库，以后更新库的时候先手动替换吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/29/Deeplearning-001/" data-id="cjczp6noy0000o6223k6t0wbw" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DeepLearning/">DeepLearning</a></li></ul>
@@ -388,11 +388,11 @@
           </li>
         
           <li>
-            <a href="/2018/01/30/Deeplearning-001/">深度学习实践-001</a>
+            <a href="/2018/01/29/Deeplearning-002/">深度学习实践-002</a>
           </li>
         
           <li>
-            <a href="/2018/01/29/Deeplearning-002/">深度学习实践-002</a>
+            <a href="/2018/01/29/Deeplearning-001/">深度学习实践-001</a>
           </li>
         
           <li>
