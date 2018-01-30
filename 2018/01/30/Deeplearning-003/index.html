@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/30/Deeplearning-003/index.html">
 <meta property="og:site_name" content="藤原敲键盘">
 <meta property="og:description" content="Library工程更新到 https://github.com/Millieen/TestNeuronNetwork  · 实现了前向传播的计算（单线程）  多核计算优化思路：  每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。 通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，">
-<meta property="og:updated_time" content="2018-01-30T09:43:52.616Z">
+<meta property="og:updated_time" content="2018-01-30T09:55:28.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习实践-003">
 <meta name="twitter:description" content="Library工程更新到 https://github.com/Millieen/TestNeuronNetwork  · 实现了前向传播的计算（单线程）  多核计算优化思路：  每个wi * ai + bi作为最小计算单元，使用一个对象。每个对象使用一个子线程计算单元并给出结果。 通过线程池控制线程（对象）数量，每个对象分配一个线程。线程池有空余的时候就创建新的对象用于计算。线程池无空闲的时候，">
@@ -107,7 +107,7 @@
 <p>· 实现了反向传播Sigmoid函数求导，以及计算dW，db的部分函数。（尚未完成）</p>
 <ul>
 <li>实现中一度迷惑于dW的维数莫名其妙多出来一个，后来才发现需要计算所有的dZi取平均后的值。</li>
-<li>截止到第一课第二周，还没有到多层的部分，所以反向传播暂时无法输出当前层的dA给上一层继续进行反向传播。</li>
+<li>截止到第一课第二周第一节，还没有到多层的部分，所以反向传播暂时无法输出当前层的dA给上一层继续进行反向传播。</li>
 <li>需要通过矩阵操作进一步简化。</li>
 </ul>
 
